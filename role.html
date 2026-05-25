@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <link rel="stylesheet" href="role.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>角色介绍</title>
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:"微软雅黑",sans-serif;
+    }
+    body{
+      background: #050710;
+      color: #e6e2d8;
+      line-height:1.8;
+    }
+    .nav{
+      background: #0a0d1b;
+      text-align:center;
+      padding:18px 0;
+      box-shadow: 0 2px 15px #000;
+      border-bottom: 1px solid #b8965b;
+    }
+    .nav a{
+      color:#c5bba7;
+      text-decoration:none;
+      margin:0 25px;
+      font-size:16px;
+      transition: 0.3s;
+      letter-spacing: 1px;
+    }
+    .nav a.active{
+      color:#d4af61;
+      border-bottom:2px solid #d4af61;
+      padding-bottom:5px;
+    }
+    .nav a:hover{
+      color:#d4af61;
+    }
+
+    .container{
+      width:90%;
+      max-width:1100px;
+      margin:50px auto;
+    }
+    h2{
+      color:#d4af61;
+      margin-bottom:30px;
+      text-align:center;
+      letter-spacing: 2px;
+    }
+
+    .role-list{
+      display:flex;
+      flex-wrap:wrap;
+      gap:25px;
+      justify-content:center;
+    }
+    .role{
+      width:280px;
+      background: #0c1020;
+      border-radius:10px;
+      overflow:hidden;
+      border: 1px solid #232a40;
+      box-shadow: 0 0 18px rgba(184, 150, 91, 0.12);
+      transition: 0.3s;
+    }
+    .role:hover{
+      transform: translateY(-5px);
+    }
+    .role img{
+      width:100%;
+      height:280px;
+      object-fit:cover;
+    }
+    .role-info{
+      padding:20px;
+    }
+    .role h3{
+      color:#e0c895;
+      margin-bottom:10px;
+      font-size: 18px;
+    }
+    .role p{
+      color: #c9c2b4;
+      line-height: 1.7;
+    }
+
+    footer{
+      background:#04060d;
+      text-align:center;
+      padding:25px;
+      color:#887e6c;
+      margin-top:50px;
+      border-top: 1px solid #1f253b;
+    }
+  </style>
+</head>
+<body>
+
+<div class="nav">
+  <a href="index.html">首页</a>
+  <a href="role.html" class="active">角色介绍</a>
+  <a href="play.html">游戏玩法</a>
+</div>
+
+<div class="container">
+  <h2>英雄角色</h2>
+  <div class="role-list">
+    <div class="role">
+      <img src="琪亚娜.png" alt="强攻角色">
+      <div class="role-info">
+        <h3>强攻角色</h3>
+        <p>高爆发、高伤害，适合正面战斗，是队伍主要输出核心。</p>
+      </div>
+    </div>
+    <div class="role">
+      <img src="爱莉希雅.png" alt="远程角色">
+      <div class="role-info">
+        <h3>远程角色</h3>
+        <p>远距离攻击，安全输出，拥有强大的控制与牵制能力。</p>
+      </div>
+    </div>
+    <div class="role">
+      <img src="李素裳.png" alt="辅助角色">
+      <div class="role-info">
+        <h3>辅助角色</h3>
+        <p>治疗、护盾、增伤，团队必备支援型角色，提升全队战力。</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>© 2025 咕咕嘎嘎官网 版权所有</footer>
+</body>
+</html>
