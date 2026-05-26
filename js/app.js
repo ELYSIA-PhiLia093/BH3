@@ -1,27 +1,40 @@
-// 获取轮播图元素
+// 获取轮播DOM元素
 const bannerInner = document.querySelector('.banner-inner');
 const imgs = document.querySelectorAll('.banner-inner img');
-const dots = document.querySelector('.dots');
 
-// 配置
-let currentIndex = 0; // 当前第几张
-const imgWidth = imgs[0].offsetWidth; // 一张图的宽度
-const len = imgs.length; // 总数量
-const speed = 3000; // 3秒切换一次
 
-// 自动播放
-function autoPlay() {
-  currentIndex++;
+// 轮播配置
+let currentIndex = 0;
+const imgLen = imgs.length;
+const intervalTime = 3000;
+let timer = null;
 
-  // 到头了回到第一张
-  if (currentIndex >= len) {
-    currentIndex = 0;
-  }
+// 获取当前图片实际宽度
+const getCurrentWidth = () => imgs[0].offsetWidth;
 
-  // 移动图片
-  bannerInner.style.transform = `translateX(-${currentIndex * imgWidth}px)`;
-  bannerInner.style.transition = '0.5s ease';
+// 切换图片位移
+function moveBanner()
+{
+  const width = getCurrentWidth();
+  bannerInner.style.transform = `translateX(-${currentIndex * width}px)`;
 }
 
-// 启动定时器
-setInterval(autoPlay, speed);
+function autoPlay()
+{
+  currentIndex++;
+  if (currentIndex >= imgLen)
+  {
+    currentIndex = 0;// 循环回到首张
+  }
+  moveBanner();
+}// 自动轮播逻辑
+
+function initPlay()
+{
+  clearInterval(timer);
+  timer = setInterval(autoPlay, intervalTime);
+}// 开启轮播
+
+window.onresize = () => moveBanner();// 窗口缩放自动适配
+
+initPlay();// 初始化执行
